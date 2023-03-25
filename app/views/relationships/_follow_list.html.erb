@@ -1,3 +1,4 @@
+ <% if users.exists? %>
 <table class='table'>
   <thead>
     <tr>
@@ -17,9 +18,11 @@
         <td>
           <p>フォロワー数：<%= user.followers.count %></p>
         </td>
-        <td><%= render "relationships/btn", user: user %></td>
         <td><%= link_to 'Show', user %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+    </tbody>
+    </table>
+  <% else %>
+    <p>ユーザーはいません</p>
+  <% end %>
