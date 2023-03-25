@@ -12,6 +12,16 @@
     <%= render 'layouts/header' %>
       <main>
         <p id="notice"><%= notice %></p>
+        <div class='container px-5 px-sm-0'>
+          <div class='row'>
+            <div class='col-md-3'></div>
+              <div class='col-md-8 offset-md-1'>
+              <% unless current_page?(root_path) %>
+                <%= render 'searches/search' %>
+              <% end %>
+              </div>
+            </div>
+          </div>
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>
